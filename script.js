@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchSongs = async (artistId) => {
         try {
-            let response = await fetch(`http://127.0.0.1:5500/artists/${artistId}`);
+            let response = await fetch(`http://127.0.0.1:5500/./artists/${artistId}`);
             let textResponse = await response.text();
 
             let div = document.createElement('div');
@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     playButton.addEventListener("click", () => {
         if (currentsong.paused) {
             currentsong.play();
-            playButton.src = "/images/pause.svg";
+            playButton.src = "./images/pause.svg";
         } else {
             currentsong.pause();
-            playButton.src = "/images/play.svg";
+            playButton.src = "./images/play.svg";
         }
     });
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error playing song:', error);
         });
 
-        playButton.src = "/images/pause.svg";
+        playButton.src = "./images/pause.svg";
         songInfo.innerHTML = songName;
 
         // Update time and duration
