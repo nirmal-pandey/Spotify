@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchSongs = async (artistId) => {
         try {
-            let response = await fetch(`http://127.0.0.1:5500/./artists/./${artistId}`);
+            let response = await fetch(`http://127.0.0.1:5500/artists/./${artistId}`);
             let textResponse = await response.text();
 
             let div = document.createElement('div');
